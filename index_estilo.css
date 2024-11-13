@@ -1,0 +1,30 @@
+body{
+    width: 65%;
+    margin:auto;
+    padding:20px;
+    background-color:darkgray;
+}
+
+ol{
+    list-style: none;
+    text-align: center;
+    border:1px black solid;
+}
+a:hover{
+    text-decoration: underline white;
+}
+li{
+    padding: 20px;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color:black;
+    
+}
+
+.seccion_grande{
+    padding: 10px;
+    margin:10px;
+    margin-bottom: 10px solid yellow;
+}
