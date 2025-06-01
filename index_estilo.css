@@ -1,80 +1,298 @@
-/* Ajuste para moviles */
-@media screen and (max-width:768px){
-    nav ol{
-        border:transparent;
-        list-style:disc;
-        padding-left: 0px;
-        margin-left: 15px;
-        flex-direction: column;
-
-    }
-
-    li {
-        flex-direction: column;
-        font-size: 20px;
-        margin: 15px;
-    }
-
-    section article{
-        display: flex;
-        flex-direction: column;
-        width:100%;
-        border-right: none;
-        border-bottom: 1px solid blue;
-        justify-content: center;
-    }
-
-    p{
-        font-size: small;
-    }
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    background-color: #fff;
+    position: relative;
 }
 
-body{
-    width: 65%;
-    margin:auto;
-    padding:20px;
-    background-color:white;
+/* Encabezado */
+header {
+    text-align: center;
+    margin: 0 0 30px 0;
+    padding: 30px 0 0;
+    background: #fff;
+    color: #333;
 }
 
-ol{
+header h1 {
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-size: 2.2em;
+    color: #000;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+}
+
+/* Navegación */
+nav {
+    background: #fff;
+    padding: 0;
+    margin: 0 0 30px 0;
+    border-bottom: 1px solid #eee;
+}
+
+nav ol {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     list-style: none;
-    text-align: center;
-    border:1px black solid;
-}
-a:hover{
-    text-decoration: underline white;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
 }
 
-li{
-    padding: 20px;
+nav li {
+    margin: 0;
 }
 
-li a{
+nav a {
+    color: #333;
     text-decoration: none;
-    color:black;
-    
+    padding: 15px 20px;
+    display: block;
+    position: relative;
+    transition: all 0.2s;
 }
 
-section{
+nav a:hover {
+    background: #f5f5f5;
+    color: #000;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+/* Advertencia */
+main > span {
+    display: block;
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid #ffeeba;
+    font-weight: 500;
     text-align: center;
 }
 
-article{
-    padding-left: 20px;
-    padding-right: 20px;
-    box-sizing: border-box;
+
+
+/* Secciones */
+section {
+    margin: 30px 0;
+    padding: 0 10px;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #e74c3c;
+    padding-bottom: 8px;
     display: inline-block;
-    width: 45%;
-    border-right: 1px solid darkblue;
+    margin-bottom: 20px;
 }
 
-article:nth-child(odd){
-    border-right: none;
+h3 {
+    color: #e74c3c;
+    margin: 25px 0 15px;
+    text-align: center;
+    width: 100%;
 }
 
-article img{
-    width: 50%;
+/* Artículos */
+article {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+article img {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    margin: 0 auto 10px;
+    display: block;
+    border: 1px solid #eee;
+    background-color: #fff;
+    padding: 5px;
+}
+
+article h4, article h3 {
+    margin: 10px 0;
+    min-height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5px;
+}
+
+article a {
+    color: #3498db;
+    text-decoration: none;
+    display: block;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de selección personal */
+section > h2#otros + article,
+section > h2#otros ~ article {
+    width: 48%;
+    margin-bottom: 30px;
+    float: left;
+    clear: none;
+}
+
+section > h2#otros + article:nth-child(odd) {
+    clear: left;
+}
+
+section > h2#otros {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    float: left;
+}
+
+/* Limpiar floats */
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #ddd;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Botón volver arriba */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #2c3e50;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 24px;
+    opacity: 0.7;
+    transition: all 0.3s;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.back-to-top:hover {
+    background: #e74c3c;
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+/* Media Queries para móviles */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+        padding: 0 20px;
+    }
+    
+    nav ol {
+        flex-direction: column;
+    }
+    
+    nav li {
+        width: 100%;
+        border-top: 1px solid #eee;
+    }
+    
+    nav a {
+        padding: 15px 20px;
+        text-align: left;
+    }
+    
+    nav a::after {
+        display: none;
+    }
+    
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+    body {
+        padding: 10px;
+    }
+    
+    nav ol {
+        flex-direction: column;
+    }
+    
+    nav a {
+        padding: 12px 20px;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    article {
+        width: 100%;
+        display: block;
+        margin-bottom: 30px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    main > span {
+        margin: 15px 0;
+        padding: 12px;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    nav a {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
 }
