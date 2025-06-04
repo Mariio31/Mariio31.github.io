@@ -157,23 +157,29 @@ article a:hover {
 }
 
 /* Sección de selección personal */
-section > h2#otros + article,
-section > h2#otros ~ article {
-    width: 48%;
-    margin-bottom: 30px;
-    float: left;
-    clear: none;
-}
-
-section > h2#otros + article:nth-child(odd) {
-    clear: left;
-}
-
 section > h2#otros {
     width: 100%;
     margin-bottom: 20px;
     text-align: center;
-    float: left;
+}
+
+section > h2#otros + article,
+section > h2#otros ~ article {
+    width: 100%;
+    margin-bottom: 30px;
+    float: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    section > h2#otros + article,
+    section > h2#otros ~ article {
+        width: 48%;
+        display: inline-block;
+    }
 }
 
 /* Limpiar floats */
